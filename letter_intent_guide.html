@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Guide: Improving Student Letters of Intent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding: 40px 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        p, li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .page-indicator {
+            text-align: center;
+            color: white;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .example {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .checklist {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        strong {
+            color: #764ba2;
+        }
+        
+        .home-page {
+            text-align: center;
+        }
+        
+        .home-page h1 {
+            border: none;
+            font-size: 3em;
+            margin-bottom: 30px;
+        }
+        
+        .home-page p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #666;
+        }
+        
+        .table-of-contents {
+            text-align: left;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+        
+        .table-of-contents ul {
+            list-style: none;
+            margin: 0;
+        }
+        
+        .table-of-contents li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .table-of-contents li:hover {
+            background: #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-indicator" id="pageIndicator"></div>
+    
+    <div class="page active" id="page0">
+        <div class="container home-page">
+            <h1>Teacher Guide:<br>Improving Student Letters of Intent</h1>
+            <p>A comprehensive resource for helping students craft compelling, professional letters that effectively communicate their goals and qualifications.</p>
+            
+            <div class="table-of-contents">
+                <h2>Contents</h2>
+                <ul>
+                    <li onclick="goToPage(1)">Part 1: Pre-Writing Foundation</li>
+                    <li onclick="goToPage(2)">Part 2: Structural Framework</li>
+                    <li onclick="goToPage(3)">Part 3: Writing Workshop Activities</li>
+                    <li onclick="goToPage(4)">Part 4: Revision Strategies</li>
+                    <li onclick="goToPage(5)">Part 5: Common Issues & Solutions</li>
+                    <li onclick="goToPage(6)">Part 6: Differentiation Strategies</li>
+                    <li onclick="goToPage(7)">Part 7: Assessment Tools</li>
+                    <li onclick="goToPage(8)">Part 8: Extension & Enrichment</li>
+                    <li onclick="goToPage(9)">Quick Reference Guide</li>
+                </ul>
+            </div>
+            
+            <div class="navigation">
+                <button disabled>Previous</button>
+                <button onclick="nextPage()">Get Started</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page1">
+        <div class="container">
+            <h1>Part 1: Pre-Writing Foundation</h1>
+            
+            <h2>Mini-Lesson: Understanding Purpose and Audience</h2>
+            <p><strong>Objective:</strong> Students identify what makes letters of intent different from other writing.</p>
+            
+            <h3>Activities:</h3>
+            <ol>
+                <li><strong>Comparison Exercise</strong> - Provide examples of a personal essay, cover letter, and letter of intent. Have students identify differences in purpose, tone, and content.</li>
+                <li><strong>Audience Analysis</strong> - Students research their target program/opportunity and create an "audience profile" answering:
+                    <ul>
+                        <li>What does this organization value?</li>
+                        <li>What problems do they solve?</li>
+                        <li>What qualities are they seeking?</li>
+                        <li>What language/terminology do they use?</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <h2>Mini-Lesson: The "So What?" Test</h2>
+            <p><strong>Objective:</strong> Students learn to move beyond generic statements to meaningful claims.</p>
+            
+            <h3>Activities:</h3>
+            <ol>
+                <li><strong>Weak vs. Strong Statements</strong> - Analyze pairs like:
+                    <div class="example">
+                        <p><strong>Weak:</strong> "I am a hard worker."</p>
+                        <p><strong>Strong:</strong> "Last semester, I balanced a part-time job with AP courses by creating a detailed study schedule, which helped me maintain a 3.8 GPA while working 15 hours weekly."</p>
+                    </div>
+                </li>
+                <li><strong>The Three-Level Depth Exercise:</strong>
+                    <ul>
+                        <li>Level 1: Generic claim ("I'm passionate about engineering")</li>
+                        <li>Level 2: Add specificity ("I'm passionate about sustainable engineering")</li>
+                        <li>Level 3: Add evidence ("After designing a rainwater collection system for my school's garden that reduced water costs by 30%, I became committed to sustainable engineering solutions")</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page2">
+        <div class="container">
+            <h1>Part 2: Structural Framework</h1>
+            
+            <h2>The Opening Paragraph Formula</h2>
+            <p>Teach students this four-sentence structure:</p>
+            <ol>
+                <li><strong>Hook:</strong> Compelling opening that shows enthusiasm or relevant experience</li>
+                <li><strong>Purpose:</strong> Clear statement of what they're applying for</li>
+                <li><strong>Qualification Preview:</strong> Brief mention of their strongest credential</li>
+                <li><strong>Transition:</strong> Lead into the body</li>
+            </ol>
+            
+            <div class="example">
+                <h3>Example Template:</h3>
+                <p>"When [specific experience], I discovered [insight about field/opportunity]. I am writing to express my strong interest in [specific program/position] at [institution]. My experience in [relevant area] and commitment to [relevant goal] have prepared me to contribute meaningfully to [program]. I believe my background in [area] aligns well with [program's focus]."</p>
+            </div>
+            
+            <h2>The Body Paragraph Structure</h2>
+            <p><strong>Teach the P.E.E. Model:</strong></p>
+            <ul>
+                <li><strong>Point:</strong> Topic sentence stating the qualification/experience</li>
+                <li><strong>Evidence:</strong> Specific example with concrete details</li>
+                <li><strong>Explanation:</strong> Connect the evidence to the opportunity (the "so what?")</li>
+            </ul>
+            
+            <div class="checklist">
+                <h3>Student Checklist for Each Body Paragraph:</h3>
+                <ul>
+                    <li>☐ Does it start with a clear claim about my qualifications?</li>
+                    <li>☐ Have I included specific names, numbers, or details?</li>
+                    <li>☐ Have I explained WHY this experience matters for this opportunity?</li>
+                    <li>☐ Does it connect to something the program values?</li>
+                </ul>
+            </div>
+            
+            <h2>The Closing Paragraph</h2>
+            <p>Students should include:</p>
+            <ol>
+                <li>Brief summary of fit</li>
+                <li>Forward-looking statement about contribution</li>
+                <li>Gratitude and call to action</li>
+                <li>Professional sign-off</li>
+            </ol>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page3">
+        <div class="container">
+            <h1>Part 3: Writing Workshop Activities</h1>
+            
+            <h2>Activity 1: Evidence Scavenger Hunt</h2>
+            <p><strong>Time:</strong> 20 minutes</p>
+            <p>Students create a "qualifications inventory":</p>
+            <ul>
+                <li>Academic achievements (grades, awards, challenging courses)</li>
+                <li>Extracurricular involvement (leadership roles, commitment duration)</li>
+                <li>Work/volunteer experience (skills gained, impact made)</li>
+                <li>Personal projects (initiative, creativity, results)</li>
+                <li>Skills (technical, linguistic, interpersonal)</li>
+            </ul>
+            <p>Have them write at least 3 specific details for each category.</p>
+            
+            <h2>Activity 2: The Specificity Challenge</h2>
+            <p><strong>Time:</strong> 15 minutes</p>
+            <p>Give students generic sentences and have them compete to make them most specific:</p>
+            <div class="example">
+                <p><strong>Generic:</strong> "I volunteered at a hospital"</p>
+                <p><strong>Improved:</strong> "I volunteered 100 hours in the pediatric unit at Memorial Hospital, where I assisted nurses with patient activities and created a children's book lending library"</p>
+            </div>
+            
+            <h2>Activity 3: Peer Audience Test</h2>
+            <p><strong>Time:</strong> 30 minutes</p>
+            <h3>Process:</h3>
+            <ol>
+                <li>Students exchange drafts (without sharing what opportunity they're applying for)</li>
+                <li>Reader identifies: What is the student applying for? What are their top 3 qualifications? What makes them stand out?</li>
+                <li>Writer reveals the opportunity and compares reader's takeaways with their intentions</li>
+                <li>Discussion: Where did clarity break down? What needs emphasis?</li>
+            </ol>
+            
+            <h2>Activity 4: Tone Tuning</h2>
+            <p><strong>Time:</strong> 20 minutes</p>
+            <p>Provide the same content written in three tones (too casual, too stiff, just right). Students identify which is appropriate and why. Then they revise a paragraph from their own letter, checking for:</p>
+            <ul>
+                <li>Professional but authentic voice</li>
+                <li>Confidence without arrogance</li>
+                <li>Enthusiasm without desperation</li>
+            </ul>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page4">
+        <div class="container">
+            <h1>Part 4: Revision Strategies</h1>
+            
+            <h2>Teacher Conference Guide</h2>
+            <p>Use these questions during individual conferences:</p>
+            
+            <h3>Content Questions:</h3>
+            <ul>
+                <li>"Can you tell me in one sentence why you're the right fit? Does your letter say that clearly?"</li>
+                <li>"What's your strongest qualification? Where does that appear in your letter?"</li>
+                <li>"What does the reader learn about you that they couldn't get from your transcript?"</li>
+            </ul>
+            
+            <h3>Evidence Questions:</h3>
+            <ul>
+                <li>"You mention [vague claim]. Can you tell me a specific story that shows this?"</li>
+                <li>"What results came from this experience?"</li>
+                <li>"How does this experience connect to what you want to do?"</li>
+            </ul>
+            
+            <h3>Technical Questions:</h3>
+            <ul>
+                <li>"Read your opening sentence aloud. Does it grab attention?"</li>
+                <li>"Where is your letter most clear? Where does it get fuzzy?"</li>
+            </ul>
+            
+            <h2>Self-Revision Checklist for Students</h2>
+            
+            <div class="checklist">
+                <h3>Content & Purpose:</h3>
+                <ul>
+                    <li>☐ Opening paragraph clearly states what I'm applying for</li>
+                    <li>☐ I can identify my thesis/main argument</li>
+                    <li>☐ Each paragraph has a clear purpose</li>
+                    <li>☐ I've included specific examples (names, numbers, outcomes)</li>
+                    <li>☐ I explain HOW my experiences prepare me for this opportunity</li>
+                    <li>☐ I demonstrate knowledge of the program/organization</li>
+                </ul>
+                
+                <h3>Voice & Tone:</h3>
+                <ul>
+                    <li>☐ The letter sounds like me (authentic voice)</li>
+                    <li>☐ Tone is professional but not robotic</li>
+                    <li>☐ I show enthusiasm without sounding desperate</li>
+                    <li>☐ I'm confident without being arrogant</li>
+                </ul>
+                
+                <h3>Technical Execution:</h3>
+                <ul>
+                    <li>☐ No spelling or grammar errors</li>
+                    <li>☐ Consistent verb tense throughout</li>
+                    <li>☐ Varied sentence structure</li>
+                    <li>☐ Appropriate length (usually 1-1.5 pages)</li>
+                    <li>☐ Professional formatting with proper heading</li>
+                    <li>☐ Strong topic sentences in each paragraph</li>
+                </ul>
+            </div>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page5">
+        <div class="container">
+            <h1>Part 5: Common Issues & Solutions</h1>
+            
+            <h2>Issue: Generic, Template-Like Writing</h2>
+            <p><strong>Symptoms:</strong> Could apply to any program, no specific details, sounds like AI</p>
+            <h3>Solutions:</h3>
+            <ul>
+                <li>Require students to include 3 specific facts about the program they researched</li>
+                <li>Ban phrases like "I am writing to express my interest" in favor of stronger openings</li>
+                <li>Implement the "Find & Replace Test": If you can replace the program name with any other program and the letter still works, it's too generic</li>
+            </ul>
+            
+            <h2>Issue: Listing Achievements Without Context</h2>
+            <p><strong>Symptoms:</strong> Reads like a resume in paragraph form, no explanation of significance</p>
+            <h3>Solutions:</h3>
+            <ul>
+                <li>Teach the "So What? Then What?" follow-up: After every achievement, students must answer why it matters and what they learned</li>
+                <li>Require transition phrases: "This experience taught me...", "As a result...", "Building on this..."</li>
+            </ul>
+            
+            <h2>Issue: Weak or Buried Thesis</h2>
+            <p><strong>Symptoms:</strong> Reader can't identify the main argument, unclear what student wants</p>
+            <h3>Solutions:</h3>
+            <ul>
+                <li>Have students write their thesis on a sticky note and place it on their draft—if they can't articulate it clearly, neither can the reader</li>
+                <li>Practice the "elevator pitch": Students explain their fit in 30 seconds before writing</li>
+            </ul>
+            
+            <h2>Issue: Poor Evidence Selection</h2>
+            <p><strong>Symptoms:</strong> Irrelevant stories, outdated achievements, no connection to opportunity</p>
+            <h3>Solutions:</h3>
+            <ul>
+                <li>Create evidence relevance scoring: For each example, rate 1-5 how relevant it is to the specific opportunity</li>
+                <li>Quality over quantity: Better to deeply explore 2-3 strong examples than superficially mention 6</li>
+            </ul>
+            
+            <h2>Issue: Mechanical Errors Undermine Professionalism</h2>
+            <p><strong>Symptoms:</strong> Spelling mistakes, wrong names, inconsistent formatting</p>
+            <h3>Solutions:</h3>
+            <ul>
+                <li>Require printed drafts (errors show up better on paper)</li>
+                <li>Peer proofreading protocol: Reader circles every error but doesn't correct it—writer must identify and fix</li>
+                <li>Create program-specific checklist (correct program name, department, contact person)</li>
+            </ul>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page6">
+        <div class="container">
+            <h1>Part 6: Differentiation Strategies</h1>
+            
+            <h2>For Struggling Writers:</h2>
+            <ul>
+                <li>Provide sentence frames and transitional phrases</li>
+                <li>Use the "talk-then-write" method: Record students explaining their qualifications, then transcribe and refine</li>
+                <li>Break the letter into smaller assignments (opening only, one body paragraph at a time)</li>
+                <li>Offer model letters with annotations explaining what makes them effective</li>
+            </ul>
+            
+            <h2>For Advanced Writers:</h2>
+            <ul>
+                <li>Challenge them to eliminate all weak verbs and generic adjectives</li>
+                <li>Have them write multiple openings and select the strongest</li>
+                <li>Encourage sophisticated connecting of multiple experiences into a coherent narrative</li>
+                <li>Ask them to mentor peers and explain their revision decisions</li>
+            </ul>
+            
+            <h2>For English Language Learners:</h2>
+            <ul>
+                <li>Focus first on content and organization, then refine language</li>
+                <li>Provide vocabulary banks of professional terms and transitional phrases</li>
+                <li>Allow extra time for language polishing</li>
+                <li>Pair with native speakers for tone/idiom checking</li>
+            </ul>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page7">
+        <div class="container">
+            <h1>Part 7: Assessment Tools</h1>
+            
+            <h2>Holistic Rubric (Recommended)</h2>
+            
+            <div class="example">
+                <h3>Distinguished (4):</h3>
+                <ul>
+                    <li>Compelling opening immediately establishes purpose and unique fit</li>
+                    <li>Sophisticated integration of specific evidence that clearly connects to opportunity</li>
+                    <li>Authentic voice balances professionalism with personality</li>
+                    <li>Flawless mechanics and professional presentation</li>
+                    <li>Demonstrates deep research and understanding of program/organization</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Proficient (3):</h3>
+                <ul>
+                    <li>Clear purpose statement and organizational structure</li>
+                    <li>Adequate specific evidence supporting qualifications</li>
+                    <li>Appropriate professional tone throughout</li>
+                    <li>Minor mechanical errors that don't distract</li>
+                    <li>Shows basic knowledge of opportunity</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Developing (2):</h3>
+                <ul>
+                    <li>Purpose present but not immediately clear</li>
+                    <li>Some specific evidence but relies heavily on generic statements</li>
+                    <li>Inconsistent tone (too casual or too stiff)</li>
+                    <li>Mechanical errors occasionally interfere with meaning</li>
+                    <li>Limited demonstration of program knowledge</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Beginning (1):</h3>
+                <ul>
+                    <li>Unclear purpose or misunderstanding of letter format</li>
+                    <li>Primarily generic claims without supporting evidence</li>
+                    <li>Inappropriate tone or voice</li>
+                    <li>Frequent mechanical errors obscure meaning</li>
+                    <li>No evidence of research into opportunity</li>
+                </ul>
+            </div>
+            
+            <h2>Analytical Rubric Categories</h2>
+            <p>(4-point scale for each):</p>
+            <ol>
+                <li><strong>Clarity of Purpose & Audience Awareness</strong></li>
+                <li><strong>Quality & Relevance of Evidence</strong></li>
+                <li><strong>Organization & Structure</strong></li>
+                <li><strong>Voice, Tone & Authenticity</strong></li>
+                <li><strong>Mechanics & Professional Presentation</strong></li>
+            </ol>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page8">
+        <div class="container">
+            <h1>Part 8: Extension & Enrichment</h1>
+            
+            <h2>Real-World Connection Activities</h2>
+            
+            <h3>Guest Speakers</h3>
+            <p>Invite admissions officers, hiring managers, or program directors to discuss what they look for in letters of intent</p>
+            
+            <h3>Mock Selection Committee</h3>
+            <p>Students anonymize their letters and serve on committees to "admit" candidates, then discuss selection criteria</p>
+            
+            <h3>Professional Review</h3>
+            <p>Connect with community professionals willing to provide feedback on student letters</p>
+            
+            <h3>Multi-Draft Portfolio</h3>
+            <p>Students maintain all drafts showing evolution from brainstorming through final product</p>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page" id="page9">
+        <div class="container">
+            <h1>Quick Reference Guide</h1>
+            
+            <h2>Week-by-Week Implementation</h2>
+            <ul>
+                <li><strong>Week 1:</strong> Purpose, audience analysis, and evidence gathering</li>
+                <li><strong>Week 2:</strong> Structural framework and drafting opening paragraphs</li>
+                <li><strong>Week 3:</strong> Body paragraph development with P.E.E. model</li>
+                <li><strong>Week 4:</strong> Closing paragraphs and first complete drafts</li>
+                <li><strong>Week 5:</strong> Peer review and teacher conferences</li>
+                <li><strong>Week 6:</strong> Revision, proofreading, and final submission</li>
+            </ul>
+            
+            <h2>Sentence Starters Students Can Use</h2>
+            <ul>
+                <li>"My interest in [field] began when..."</li>
+                <li>"Through my experience with [activity], I developed..."</li>
+                <li>"This opportunity aligns with my goal to..."</li>
+                <li>"I am particularly drawn to [specific program feature] because..."</li>
+                <li>"My work in [area] has prepared me to..."</li>
+            </ul>
+            
+            <h2>Red Flags to Watch For</h2>
+            <ul>
+                <li>Opening with "My name is..." (usually unnecessary)</li>
+                <li>"I am writing to express my interest in..." (weak opening)</li>
+                <li>"Since I was a child..." (often feels forced unless genuinely relevant)</li>
+                <li>Repeated "I" sentence starts (monotonous structure)</li>
+                <li>Unexplained jargon or acronyms</li>
+                <li>Apologetic language ("I know I'm not the most qualified, but...")</li>
+                <li>Demands or presumptions ("When I am accepted..." vs. "If selected...")</li>
+            </ul>
+            
+            <h2>Parent Communication Tip</h2>
+            <p>Send home a one-page guide explaining the assignment's purpose and how parents can help (brainstorming experiences, proofreading) without taking over the writing process.</p>
+            
+            <div class="example">
+                <p><strong>Remember:</strong> The goal is not perfection but authentic, professional communication that genuinely represents each student's unique qualifications and aspirations.</p>
+            </div>
+            
+            <div class="navigation">
+                <button onclick="prevPage()">Previous</button>
+                <button onclick="goToPage(0)">Back to Home</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let currentPage = 0;
+        const totalPages = 10;
+        
+        function updatePageIndicator() {
+            const indicator = document.getElementById('pageIndicator');
+            if (currentPage === 0) {
+                indicator.textContent = 'Home';
+            } else {
+                indicator.textContent = `Part ${currentPage} of 9`;
+            }
+        }
+        
+        function showPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('page' + pageNum).classList.add('active');
+            currentPage = pageNum;
+            updatePageIndicator();
+            window.scrollTo(0, 0);
+        }
+        
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                showPage(currentPage + 1);
+            }
+        }
+        
+        function prevPage() {
+            if (currentPage > 0) {
+                showPage(currentPage - 1);
+            }
+        }
+        
+        function goToPage(pageNum) {
+            showPage(pageNum);
+        }
+        
+        updatePageIndicator();
+    </script>
+</body>
+</html>
